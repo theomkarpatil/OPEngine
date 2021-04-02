@@ -1,4 +1,5 @@
 #pragma once
+//#include "Log.h"
 
 #ifdef OPE_PLATFORM_WINDOWS
 	#ifdef OPE_BUILD_DLL
@@ -9,3 +10,4 @@
 #else 
 	#error OPEngine only supports Windows. For now.
 #endif
+
