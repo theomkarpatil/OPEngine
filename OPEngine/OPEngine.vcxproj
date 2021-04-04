@@ -97,6 +97,10 @@
     <Link>
       <SubSystem>Console</SubSystem>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(OutDir)OPEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\Application\";
+xcopy /y "$(OutDir)OPEngine.lib" "$(SolutionDir)bin\$(Configuration)-$(Platform)\Application\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -110,6 +114,10 @@
     <Link>
       <SubSystem>Console</SubSystem>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(OutDir)OPEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\Application\";
+xcopy /y "$(OutDir)OPEngine.lib" "$(SolutionDir)bin\$(Configuration)-$(Platform)\Application\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -127,6 +135,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(OutDir)OPEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\Application\";
+xcopy /y "$(OutDir)OPEngine.lib" "$(SolutionDir)bin\$(Configuration)-$(Platform)\Application\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -144,16 +156,24 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(OutDir)OPEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\Application\";
+xcopy /y "$(OutDir)OPEngine.lib" "$(SolutionDir)bin\$(Configuration)-$(Platform)\Application\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Engine\Log.h" />
+    <ClInclude Include="src\Engine\Managers\Events\WindowEvents.h" />
+    <ClInclude Include="src\Engine\Managers\Events\EventManager.h" />
+    <ClInclude Include="src\Engine\DubugLog.h" />
     <ClInclude Include="src\Engine\Application.h" />
     <ClInclude Include="src\Engine\EntryPoint.h" />
     <ClInclude Include="src\Engine\macros.h" />
+    <ClInclude Include="src\Engine\Managers\Events\KeyEvents.h" />
+    <ClInclude Include="src\Engine\Managers\Events\MouseEvents.h" />
     <ClInclude Include="src\OPEngine.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Engine\Log.cpp" />
+    <ClCompile Include="src\Engine\DebugLog.cpp" />
     <ClCompile Include="src\Engine\Application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

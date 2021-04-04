@@ -11,3 +11,4 @@
 	#error OPEngine only supports Windows. For now.
 #endif
 
+#define BIT(x) (1 << x)

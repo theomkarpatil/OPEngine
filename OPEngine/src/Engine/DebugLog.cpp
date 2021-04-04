@@ -1,11 +1,11 @@
-#include "Log.h"
+#include "DubugLog.h"
 
 namespace OPEngine {
 
-	std::shared_ptr<spdlog::logger> Log::sp_engineLogger;
-	std::shared_ptr<spdlog::logger> Log::sp_clientLogger;
+	std::shared_ptr<spdlog::logger> DebugLog::sp_engineLogger;
+	std::shared_ptr<spdlog::logger> DebugLog::sp_clientLogger;
 
-	void Log::Init()
+	void DebugLog::Init()
 	{
 							//%T-> time, %n-> logger's name, %v-> actual log// 
 		spdlog::set_pattern("[%T] %n %^%v%$");
