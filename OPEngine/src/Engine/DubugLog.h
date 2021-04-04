@@ -3,8 +3,6 @@
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "macros.h"
 
-#include <memory>
-
 namespace OPEngine {
 
 	class OPE_API DebugLog {

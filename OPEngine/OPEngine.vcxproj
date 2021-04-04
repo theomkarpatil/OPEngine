@@ -93,6 +93,9 @@
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>OPE_PLATFORM_WINDOWS;OPE_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)OPEngine\externals\spdLog\include\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OPEpch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>OPEpch.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,6 +113,9 @@ xcopy /y "$(OutDir)OPEngine.lib" "$(SolutionDir)bin\$(Configuration)-$(Platform)
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>OPE_PLATFORM_WINDOWS;OPE_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)OPEngine\externals\spdLog\include\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OPEpch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>OPEpch.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,6 +135,9 @@ xcopy /y "$(OutDir)OPEngine.lib" "$(SolutionDir)bin\$(Configuration)-$(Platform)
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>OPE_PLATFORM_WINDOWS;OPE_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)OPEngine\externals\spdLog\include\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OPEpch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>OPEpch.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -150,6 +159,9 @@ xcopy /y "$(OutDir)OPEngine.lib" "$(SolutionDir)bin\$(Configuration)-$(Platform)
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>OPE_PLATFORM_WINDOWS;OPE_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)OPEngine\externals\spdLog\include\</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OPEpch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>OPEpch.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -171,10 +183,21 @@ xcopy /y "$(OutDir)OPEngine.lib" "$(SolutionDir)bin\$(Configuration)-$(Platform)
     <ClInclude Include="src\Engine\Managers\Events\KeyEvents.h" />
     <ClInclude Include="src\Engine\Managers\Events\MouseEvents.h" />
     <ClInclude Include="src\OPEngine.h" />
+    <ClInclude Include="src\OPEpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\DebugLog.cpp" />
     <ClCompile Include="src\Engine\Application.cpp" />
+    <ClCompile Include="src\OPEpch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">OPEpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">OPEpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">OPEpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">OPEpch.h</PrecompiledHeaderFile>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,6 @@
 #pragma once
 #include "EventManager.h"
 
-#include <sstream>
-
 namespace OPEngine {
 	
 	class OPE_API KeyEvents : public Event {

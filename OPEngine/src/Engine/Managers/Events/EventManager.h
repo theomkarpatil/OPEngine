@@ -1,8 +1,6 @@
 #pragma once
 #include "../../macros.h"
 
-#include <string>
-#include <functional>
 
 namespace OPEngine {
 
